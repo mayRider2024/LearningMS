@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frappe Learning - Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-gray-900">Frappe Learning</h1>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Courses</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Batches</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Welcome to Frappe Learning</h2>
+            <p class="text-xl text-gray-600 mb-8">Easy to use, open source, Learning Management System</p>
+            <div class="bg-blue-100 border border-blue-200 rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-blue-900 mb-2">Demo Version</h3>
+                <p class="text-blue-700">This is a frontend-only demo. To get the full LMS with backend functionality, install Docker Desktop and run the Docker setup.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">📚 Structured Learning</h3>
+                <p class="text-gray-600">Design courses with a 3-level hierarchy. Group lessons within chapters for better context.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">🎥 Live Classes</h3>
+                <p class="text-gray-600">Group learners into batches and create Zoom live classes right from the app.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-semibold mb-4">📝 Quizzes & Assignments</h3>
+                <p class="text-gray-600">Create interactive quizzes and assignments. Support for multiple choice and open-ended questions.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-white rounded-lg shadow-md p-8">
+            <h3 class="text-2xl font-bold mb-4">How to get the full version running:</h3>
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <span class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">1</span>
+                    <div>
+                        <p class="font-semibold">Install Docker Desktop (Free)</p>
+                        <p class="text-gray-600">Download from docker.com and install</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">2</span>
+                    <div>
+                        <p class="font-semibold">Start Docker</p>
+                        <p class="text-gray-600">Open Docker Desktop and wait for it to say "Running"</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">3</span>
+                    <div>
+                        <p class="font-semibold">Run the setup</p>
+                        <p class="text-gray-600 font-mono bg-gray-100 p-2 rounded mt-2">
+                            cd C:\Users\HP\OneDrive\Desktop\learningms\docker<br>
+                            docker-compose up -d
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-semibold mr-4 mt-1">4</span>
+                    <div>
+                        <p class="font-semibold">Access the LMS</p>
+                        <p class="text-gray-600">Visit <code class="bg-gray-100 px-2 py-1 rounded">http://lms.localhost:8000/lms</code></p>
+                        <p class="text-gray-600">Login: Administrator / admin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

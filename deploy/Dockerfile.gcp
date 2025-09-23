@@ -1,0 +1,25 @@
+# Production Dockerfile for Google Cloud Run
+FROM frappe/bench:latest
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /home/frappe
+
+# Copy initialization script
+COPY deploy/init-gcp.sh /workspace/init-gcp.sh
+RUN chmod +x /workspace/init-gcp.sh
+
+# Set environment variables
+ENV SHELL=/bin/bash
+ENV PATH="${NVM_DIR}/versions/node/v${NODE_VERSION_DEVELOP}/bin/:${PATH}"
+
+# Expose port
+EXPOSE 8000
+
+# Use custom initialization script
+CMD ["bash", "/workspace/init-gcp.sh"]

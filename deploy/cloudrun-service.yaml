@@ -1,0 +1,40 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/execution-environment: gen2
+  name: frappe-learning
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/cpu-throttling: "false"
+        run.googleapis.com/memory: "2Gi"
+        run.googleapis.com/cpu: "1000m"
+    spec:
+      containerConcurrency: 1000
+      timeoutSeconds: 3600
+      containers:
+      - image: gcr.io/PROJECT_ID/frappe-learning:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DB_HOST
+          value: "YOUR_CLOUD_SQL_IP"
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_ROOT_PASSWORD
+          value: "your-db-password"
+        - name: REDIS_HOST
+          value: "YOUR_REDIS_IP"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: SITE_NAME
+          value: "your-domain.com"
+        - name: ADMIN_PASSWORD
+          value: "secure-admin-password"
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2Gi
